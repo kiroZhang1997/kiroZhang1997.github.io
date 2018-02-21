@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        翻译-《彩虹六号：围攻》中可破坏关卡中的动态音频设计 · kiro_11
+        
+    </title>
+    <link rel="icon" href= /images/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <!-- 提前加载place holder  -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url(/font/Oswald-Regular.ttf);
+        }
+    </style>
+    <style type="text/css">
+        .site-intro-placeholder {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0px;
+            width: calc(100% + 300px);
+            height: 100%;
+            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+            background-position: center center;
+            transform: translate3d(-226px, 0, 0);
+            animation: gradient-move 2.5s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+    <link rel="stylesheet" href = /css/style.css?v=20171020 />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >kiro_11&#39;s studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">翻译-《彩虹六号：围攻》中可破坏关卡中的动态音频设计</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>kiro_11's studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-img" style="background-image: url(/intro/maxresdefault.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            翻译-《彩虹六号：围攻》中可破坏关卡中的动态音频设计
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = GameDesign>GameDesign</a>
+    
+</div>
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/02/21</span>
+            </div>
+        
+    </div>
+</div>
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            var browser = {
+                    versions: function () {
+                        var u = window.navigator.userAgent;
+                        return {
+                            userAgent: u,
+                            trident: u.indexOf('Trident') > -1, //IE内核
+                            presto: u.indexOf('Presto') > -1, //opera内核
+                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                            iPad: u.indexOf('iPad') > -1, //是否为iPad
+                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+                        };
+                    }()
+                }
+
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                        if (postIntroTags) {
+                            postIntroTags.classList.add('post-fade-in');
+                        }
+                        if (postIntroMeat) {
+                            postIntroMeat.classList.add('post-fade-in');
+                        }
+                    }
+                }
+                
+            console.log("userAgent:" + browser.versions.userAgent);
+            // UC不支持跨域，所以直接显示
+            if (browser.versions.uc) {
+                console.log("UCBrowser");
+                fontLoaded();
+            } else {
+                WebFont.load({
+                    custom: {
+                        families: ['Oswald-Regular']
+                    },
+                    loading: function () {  //所有字体开始加载
+                        // console.log('loading');
+                    },
+                    active: function () {  //所有字体已渲染
+                        fontLoaded();
+                    },
+                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                        console.log('inactive: timeout');
+                        fontLoaded();
+                    },
+                    timeout: 7000 // Set the timeout to two seconds
+                });
+            }
+        </script>
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>本文译自国外游戏设计网站Gamasutra，文章中的采访视频原载于Youtube，添加中文字幕后重新上传以便观看</p>
+<p>注：“游戏设计深潜”是Gamasutra中一个正在连载的文章栏目，其宗旨是详细阐述某项具体电子游戏中的设计/艺术/技术特征，以表明那些看似简单的设计决策其实蕴含深意。</p>
+<h1 id="Who：育碧蒙特利尔工作室音频总监-路易斯·菲利普·迪昂（Louis-Philippe-Dion）"><a href="#Who：育碧蒙特利尔工作室音频总监-路易斯·菲利普·迪昂（Louis-Philippe-Dion）" class="headerlink" title="Who：育碧蒙特利尔工作室音频总监 路易斯·菲利普·迪昂（Louis Philippe Dion）"></a>Who：育碧蒙特利尔工作室音频总监 <br>路易斯·菲利普·迪昂（Louis Philippe Dion）</h1><p>我是《彩虹六号：围攻》的音频总监，已经在育碧工作了七年。在围攻之前，我参加过《波斯王子》和《细胞分裂》的音频设计。我还曾担任育碧内部音频引擎解决方案的产品经理。</p>
+<p>在从事游戏行业工作之前，我参加过多部电视剧和电影的声音设计工作。 作为一种爱好，我一直在创作音乐，沉浸于钻研合成器、吉他等任何能够发出声音的东西。</p>
+<p>我对声音技术抱有很大的兴趣，所以我很高兴能够加入游戏行业。 我觉得与电影和电视行业相比，游戏为创新和技术突破提供了更多的机会。 我们只是刚开始挖掘互动声音、实时混音和新定位算法的潜力，我迫不及待地想知道未来会发生什么。</p>
+<h1 id="中文字幕视频链接："><a href="#中文字幕视频链接：" class="headerlink" title="中文字幕视频链接："></a>中文字幕视频链接：</h1><p><a href="https://zhuanlan.zhihu.com/p/33907398?utm_medium=social&amp;utm_source=ZHShareTargetIDMore" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/33907398?utm_medium=social&amp;utm_source=ZHShareTargetIDMore</a></p>
+<h1 id="What：在可破坏环境中的动态声音传播"><a href="#What：在可破坏环境中的动态声音传播" class="headerlink" title="What：在可破坏环境中的动态声音传播"></a>What：在可破坏环境中的动态声音传播</h1><p>声音传播中在物理学中基本上有三个主要概念：反射，即声音从表面反射回来;吸收，即声音通过墙壁时吸收某些频段的过程;衍射，即声音在物体周围传播。你可以在日常的声音中感受这些现象。现实生活中的许多其他因素会对局部声音造成影响，但我们只关注物理层面的传播以及模拟这种传播的方法。</p>
+<p>《彩虹六号：围攻》在音频方面的主要创新是延伸使用衍射，或者叫“声音阻塞”。通过在地图中宏观放置一些点（在这里称为传播节点），我们可以计算听者与声源之间的声音传播距离较短的路径。传播路径的距离取决于多个因素，即路径长度，累积角度以及特定传播节点的声音损耗。</p>
+<p>例如，如果墙壁完好无损，墙内的传播节点算法就不可用。但是，如果在墙上开了一个洞，那么最近的节点将让传播路径进行选择，而是否会让声音通过则具体取决于受影响的区域。然后我们会重新定位声音以反映路径的方向，而不是模拟衍射声源的最终实际位置。</p>
+<p>我们也使用几种策略来模拟吸收，我们称之为“声音阻塞”。根据声源的不同，我们可以播放受阻声音的预渲染模拟（例如天花板上的脚步声），也可以播放直接路径中的相同声源以及实时滤波。由于后者会消耗CPU更高的性能，因此主要用于枪支。就像在现实生活中一样，玩家可以将现象结合起来以获取有关声源位置的更多信息。</p>
+<p>最后，关于游戏中的混响，我们选择使用脉冲响应混响处理器。这种特定类型的混响会“采样”真实房间的声学效果，然后播放游戏声音。在我看来，这种方法比传统参数混响要先进几年 ——至少在模拟的情况下。唯一的缺点是由于CPU性能的限制，无法在很多情况下使用它。为了克服这个限制，我们采用了“烘焙”枪的混响这种方法。这使得玩家可以从武器定位的混响中受益，从而提供更好的位置信息。</p>
+<p><img src="/images/Rainbow6Audio/Siege1.jpg" alt=""></p>
+<h1 id="Why"><a href="#Why" class="headerlink" title="Why:"></a>Why:</h1><p>可破坏的游戏环境是声音传播过程中面临的重大挑战之一。虽说理论上是通过最短路径传播声音，但实际操作中让关卡自己修正传播路径是我们以前从未做过的事情。除了渲染质量之外，从CPU性能的角度来看，这也是非常具有挑战性的。我们在所有“可破坏”的表面上放置了一些节点，并让这些节点保持关闭状态，直到发生破坏。我们在所需的粒度上进行了许多迭代，以找到精度和性能约束之间的最佳平衡。</p>
+<p>另一个有趣的因素是游戏中声音传播路径的修正不止一种方式：节点可以从关闭状态打开，也可以从打开状态关闭。借助路障和墙体强化装置，玩家可以修改潜在的声音路径，而算法将重新实时计算出新的传播路径解决方案。这些遮挡物（例如，路障，墙壁强化物等）不一定完全关闭这些传播节点;这取决于它们的材料特性（例如，木头，玻璃，混凝土等），它们可以使声音通过时产生一定的损耗。例如，木质路障和金属路障都有自己的障碍物损耗参数，所以我们可以根据使用的材料或多或少地减弱声音。</p>
+<p>此外，《围攻》具有高水平的可破坏环境和很强的子弹穿透力，所以如果我们只依靠声音阻塞而忽视实体阻塞，就会造成灾难性的后果。声音阻塞将是一个很重要的防御方式。例如，作为防守方，你所需要做的就是加固尽可能多的围墙，等待听到进攻方走过未加固的墙壁时射击 ——敌人永远不会知道什么攻击了他们。我们尝试尽可能准确地传递信息，但“真实物理学”的模拟在一定程度上增加了对玩家的困扰。诚然，在某些情况下，它可能会令人沮丧，但这也是模拟现实生活的一种方式吧。</p>
+<p>这并不是说我们不会不断尝试改进我们的算法。我们喜欢在Reddit上阅读玩家觉得游戏中声音传播对双方不公平的的帖子，这些对我们来说极具含金量，我们在将来的改进中一定会考虑到这一点。</p>
+<p><img src="/images/Rainbow6Audio/Siege5.jpg" alt=""><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;游戏中“赫里夫基地”地图</p>
+<h1 id="倾听玩家的行为"><a href="#倾听玩家的行为" class="headerlink" title="倾听玩家的行为"></a>倾听玩家的行为</h1><p>安静的声音其实是游戏的核心部分，即使是在较短的三分钟回合中，玩家的主要行为也在倾听。我们在开发过程中认为，从音频角度来看， 地图的氛围其实会有点令人不爽。 在郊区的卧室里等待，要比在战场或太空中差劲多了，晓得伐？</p>
+<p>当时并不是所有的小声音、导航、枪声都被插入，而声音传播系统仍处于早期阶段。 但是随着问题不断被解决，我们意识到比起“伪造紧张局势”，我们有更好的方式。玩家所听到的威胁是真实的， 限制使用沉重的氛围层次，其实更有助于我们营造游戏的紧张感，并为玩家提供更准确的位置信息。</p>
+<p><img src="/images/Rainbow6Audio/Siege6.jpg" alt=""><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;赫里夫基地的声音传播方案设计</p>
+<p>我们特别关注导航声音中的真实性和细节数量，以帮助玩家获得更多信息，而不是通过听他人在地图中导航：敌人的体重、防具和速度都可以在导航声音中通过听觉获得线索来确定。</p>
+<p>工具的部署，如爆破炸药、路障和其他设备也受到特别关注，来确保给依靠声音获得情报的玩家提供良好的线索。</p>
+<p>玩家自身第一人称行进声音的音量也相对较大主要有两个重要原因：这类声音告知玩家他们正在产生相当数量的噪音，这会暴露他们的位置;其次，它告知玩家这种声音敌人也会发出，这是《围攻》音效设计的基础; 如果你放慢脚步，聆听周围的环境，就可以收集更多的情报，并有更好的游戏表现。</p>
+<p><img src="/images/Rainbow6Audio/Siege7.jpg" alt=""><br>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;一个传播节点的特写</p>
+<h1 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h1><p>从这个游戏项目开始，我们所设定的理想游戏情绪就是紧张。 在某个时候，我们添加了一大堆音乐和人工声音来营造更多的紧张感，但如前所述，我们所拥有的最佳元素是你看不到的玩家发出的声音。 所以我们删除了所有强加的的赋予情绪的声音，而关注真正重要的事情：由玩家创造的声音。</p>
+<p>今天回想起来，这听起来有点浅显，但我发现其实很少有游戏在游戏过程中不使用任何夸张的声音。 对我来讲，人造声音的剔除不仅使人们对《围攻》中游戏声音的印象感到有趣，也确确实实在很大程度上影响了整个游戏的玩法。</p>
+<p>原文链接：<br><a href="https://www.gamasutra.com/view/news/288565/Game_Design_Deep_Dive_Dynamic_audio_in_destructible_levels_in_Rainbow_Six_Siege.php" target="_blank" rel="noopener">https://www.gamasutra.com/view/news/288565/Game_Design_Deep_Dive_Dynamic_audio_in_destructible_levels_in_Rainbow_Six_Siege.php</a><br>原视频链接：<br><a href="https://www.youtube.com/watch?v=ti6ZWRSiqpQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=ti6ZWRSiqpQ</a></p>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2018/01/26/GameDesignGuideTrans/" title= 翻译-多人游戏关卡设计视觉化指南 >
+                    <span>Previous Post</span>
+                    <span>翻译-多人游戏关卡设计视觉化指南</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMjgwNi85MzY3>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:KiroZhang1997@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/kiroZhang1997" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.facebook.com/profile.php?id=100010596064807" class="iconfont-archer facebook" target="_blank" title="facebook"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/%E8%8D%A9%E5%B0%A7-%E5%BC%A0-6b1449128/" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
+        </span>
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Who：育碧蒙特利尔工作室音频总监-路易斯·菲利普·迪昂（Louis-Philippe-Dion）"><span class="toc-number">1.</span> <span class="toc-text">Who：育碧蒙特利尔工作室音频总监 路易斯·菲利普·迪昂（Louis Philippe Dion）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#中文字幕视频链接："><span class="toc-number">2.</span> <span class="toc-text">中文字幕视频链接：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#What：在可破坏环境中的动态声音传播"><span class="toc-number">3.</span> <span class="toc-text">What：在可破坏环境中的动态声音传播</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Why"><span class="toc-number">4.</span> <span class="toc-text">Why:</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#倾听玩家的行为"><span class="toc-number">5.</span> <span class="toc-text">倾听玩家的行为</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#结论："><span class="toc-number">6.</span> <span class="toc-text">结论：</span></a></li></ol>
+    </div>
+    
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header sidebar-header-show-archive">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 6 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2018/02/21/Rainbow6_Audio/" >翻译-《彩虹六号：围攻》中可破坏关卡中的动态音频设计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2018/01/26/GameDesignGuideTrans/" >翻译-多人游戏关卡设计视觉化指南</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href= "/2017/12/22/unityApi/" >Note_UnityAPI</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2017/11/30/JS_Scoping&Hoisting/" >JavaScript中的作用域和声明提升 Scoping & Hoisting in JavaScript</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/About_const_2/" >C++:关于常量const</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/CompositeDataType/" >C++:关于复合类型</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">C++</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Programming</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">GameDesign</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Unity</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
