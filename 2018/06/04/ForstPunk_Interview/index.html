@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <title>
+        
+        翻译-冰汽时代开发者访谈:希望、苦难与峻法 · kiro_11
+        
+    </title>
+    <link rel="icon" href= /images/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+    <!-- 提前加载place holder  -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url(/font/Oswald-Regular.ttf);
+        }
+    </style>
+    <style type="text/css">
+        .site-intro-placeholder {
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0px;
+            width: calc(100% + 300px);
+            height: 100%;
+            background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+            background-position: center center;
+            transform: translate3d(-226px, 0, 0);
+            animation: gradient-move 2.5s ease-out 0s 1;
+        }
+        @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+</style>
+    <link rel="stylesheet" href = /css/style.css?v=20171020 />
+    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
+    
+    <script src="/scripts/main.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >kiro_11&#39;s studio</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">翻译-冰汽时代开发者访谈:希望、苦难与峻法</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>kiro_11's studio</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-img" style="background-image: url(/intro/frostpunkbg.jpg)"></div>
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            翻译-冰汽时代开发者访谈:希望、苦难与峻法
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+                <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = GameDesign>GameDesign</a>
+    
+</div>
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2018/06/04</span>
+            </div>
+        
+    </div>
+</div>
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <script>
+            var browser = {
+                    versions: function () {
+                        var u = window.navigator.userAgent;
+                        return {
+                            userAgent: u,
+                            trident: u.indexOf('Trident') > -1, //IE内核
+                            presto: u.indexOf('Presto') > -1, //opera内核
+                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+                            iPad: u.indexOf('iPad') > -1, //是否为iPad
+                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+                            weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+                        };
+                    }()
+                }
+
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                        if (postIntroTags) {
+                            postIntroTags.classList.add('post-fade-in');
+                        }
+                        if (postIntroMeat) {
+                            postIntroMeat.classList.add('post-fade-in');
+                        }
+                    }
+                }
+                
+            console.log("userAgent:" + browser.versions.userAgent);
+            // UC不支持跨域，所以直接显示
+            if (browser.versions.uc) {
+                console.log("UCBrowser");
+                fontLoaded();
+            } else {
+                WebFont.load({
+                    custom: {
+                        families: ['Oswald-Regular']
+                    },
+                    loading: function () {  //所有字体开始加载
+                        // console.log('loading');
+                    },
+                    active: function () {  //所有字体已渲染
+                        fontLoaded();
+                    },
+                    inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+                        console.log('inactive: timeout');
+                        fontLoaded();
+                    },
+                    timeout: 7000 // Set the timeout to two seconds
+                });
+            }
+        </script>
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <blockquote>
+<p>11-Bit 工作室向我们介绍了从这款严酷的生存建设游戏中得到的启示和思想延伸</p>
+</blockquote>
+<p><strong><br><a href="https://www.pcgamer.com/frostpunk-developers-on-hope-misery-and-the-ultimately-terrifying-book-of-laws/" target="_blank" rel="noopener"><br>本文原载于PC Gamer  原文链接<br></a><br>作者：Christopher Livingston<br>翻译：张荩尧<br>校对：李江琳
+</strong><br><img src="/images/FrostPunkInterview/1.jpg" alt=""></p>
+<blockquote>
+<p>原文章仅代表作者观点，不代表译者立场</p>
+</blockquote>
+<p>《冰汽时代》由波兰的11-Bit工作室开发，融合了在冰封的末世中进行城市建设、危机管理、生存和社会模拟的玩法。这是一个紧张而痛苦的游戏经历，它探索了玩家将在多大程度上保护自己的公民，并且给他们带来希望和唯一比“当下”更不确定的事物——“未来”。</p>
+<p>近来我在Skype上采访了《冰汽时代》的首席设计师<strong>Kuba Stokalski</strong>，项目策划和首席美术师<strong>Łukasz Juszczyk</strong>，还有高级设计师<strong>Marta Fijak</strong>，和他们一起谈论《冰汽时代》这款游戏的开发过程、美术风格、游戏法典以及来自真实世界的灵感。</p>
+<p><strong><em>PC Gamer：是什么给了你们做《冰汽时代》的最初灵感？</em></strong></p>
+<p><strong>Kuba Stokalski</strong>：嗯，我认为这实际上是许多事情共同作用下的结果。一方面，《这是我的战争》的热销从根本上改变了公司的处境，但我们并不想给它做续作。《这是我的战争》从体验上来讲比较特立独行，但同时我们觉得这也是一种能与玩家产生共鸣的东西，能让他们感受到游戏富有意义的主题和严肃冷酷的基调，所以我们一直在寻找与之一脉相承的设计。</p>
+<p>但另一方面，我们想制作体量更大的游戏，并且从根本上把“生存”和“城市建设”这两种游戏形式相结合。从项目的初始阶段我们就希望新游戏具有更宏大的体量和更严肃的主题，题材规模从个体上升到整个社会层面。这个“社会生存”的概念是指人们在面临整个社会群体的生存危机的时候，是否愿意跨过某一条界限。这是从项目伊始就确定的设计理念。<br><img src="/images/FrostPunkInterview/2.jpg" alt=""></p>
+<p><strong><em>PC Gamer：如您所述，这个游戏有诸如生存、资源统筹、社会管理这些策略要素，制作组是如何平衡这些要素以免顾此失彼的？</em></strong></p>
+<p><strong>Kuba</strong>：事实上，我们11-Bit工作室并不会特别关注某些游戏要素构成的策略流派，也不会把主要精力放在这些策略流派的细节上。制作一款游戏多少都会围绕某种类型，我们深知这一点，但我们真正追求的是在游戏中给予玩家深刻的感受和情绪体验，这才是我们抉择的主要参考。</p>
+<p>因此，不管是设计模拟系统、设置科技树、编纂法条中的社会决策，还是设计艺术风格，我们总是要问自己，这些内容是否专注于游戏的中心主题，即关于生存、生存极限和社会的承受能力。因此我们将游戏多次迭代，用独特的方式融合这些设计，使之更好地服务游戏的主题，而不是舍本逐末。</p>
+<p><strong><em>PC Gamer：一般来讲城市建造类型的游戏会有“幸福度”的设定，而你们的游戏有两个相异的设定值：希望值和不满度，这两个值可以全满也可以全空，是什么导致你用这两个设定来表达社会的感受和反馈？</em></strong></p>
+<p><strong>Marta</strong>：从一开始我们就想在游戏中设置这个方面来展现社会情绪。所以出现不满情绪是很自然的，因为这种不满来源于公民的需求。我们心目中的“社会”是一群有创造力的个体，而非抽象的“社会模型”。所以在社会形成过程中产生不满是非常自然的。</p>
+<p>而希望这个设定来自于研究。我们研究了苛刻条件下，除了生理能力之外人们何以幸存。答案是希望。我们读了许多有关登山与探险的事故记录，当人们从高处爬落的时候其实是处于濒死状态的，是希望支撑着他们活了下来。</p>
+<p>在我们进行研究时，“希望”是一个经久不衰的主题，因此我们将其放在游戏中。我们游戏中的人不必如动物一样苟且存活，他们需要一个活下去的理由，这就是希望所象征的事物。这个设定也很好地表达了我们想要表达的主题。<br><img src="/images/FrostPunkInterview/3.jpg" alt=""></p>
+<p><strong><em>PC Gamer：一般来说城市建设游戏会给玩家特定的情景，让他们摆脱困境。这类游戏通常有无限的、开放的模式。当你们设计《冰汽时代》时，玩家会有一段时间来完成特定的游戏目标，那么你们是否考虑过把它设计成为无尽的游戏模式？</em></strong></p>
+<p><strong>Kuba</strong>：其实我们在开始制作的一段之间之内并没有敲定主意。我们笃定要讲一个关于生存的故事，所以游戏的结局也要和生存下去有关。至于游戏模式是开放还是封闭，我们最初并没有确定，它是在迭代的过程中自然形成的。</p>
+<p>基本来说，我们有以下这些主要的故事场景：第一是关注民众的基本生存；第二是在困难条件下突然出现的社会断层，还有就是玩家作为领导人该如何解决这些问题。最后是暴风雪的考验，我们发现在玩家经历一系列的事件、做出艰难的决定后，会出现“太阳升起了，气候要变暖了，是时候去修筑建筑了”的想法。而这其实是与游戏内的气候设定相悖的，也与做出艰难决定和牺牲而生存下来的痛苦经历相悖。这种形式的高潮并不奏效，因此我们决定在游戏结局使用小说结尾的手法，而不是和其他城市建设游戏一样使用沙盒式设定。</p>
+<p><img src="/images/FrostPunkInterview/4.png" alt=""><br><strong><em>PC Gamer：游戏中有“法典”这一有趣的系统，那么你们是如何设计这个系统并选择特定的法律的</em></strong></p>
+<p><strong>Marta</strong>：从游戏开发的初期，我们就确定在游戏中玩家有选择的机会，包括做什么、走何种路线以及塑造社会的方式。但在早期的版本中，这些主要是来自玩家治下的公民，所以在游戏过程中，公民的问题会不断涌现，那么玩家作为领导人就应当做出反应，选择要制定的法条。</p>
+<p>在游戏迭代的过程中我们发现，由于缺乏玩家的能动性，制定特定法条并不是一个最佳方式。玩家无法随时制定需要的法条，所以意识到这个问题后我们开始对法典进行迭代。法典就是把这些法条汇总排序，形成具有政策倾向的集合。而我们要讨论的主题之一是社会上的“温水煮青蛙”效应，所以在游戏中玩家对法典做出的小修订可能变化不大也并不激进，但是这些修订总的影响则是庞大乃至可怖的。这个现象在生活中其实无处不在，很多制度或者社会状况都是温水煮青蛙式演进。</p>
+<p>所以这就是我们选择法律的方式，特别是在法律演化树上。我们会把所有的法律选项都列举出来，所有玩家的脑海中都会有自己的路线。我们设计这些可选路线并不是为了用我们个人的道德标准去挑战玩家的道德观，不过每一部法律确乎要比前部更加激进一些。</p>
+<p>法律演化树上的大部分内容是通过对游戏玩法和真实历史的研究而确定的。例如食物中的锯末–这实际上在俄罗斯和其他许多的地方真实发生过，维多利亚时代的童工也经历过，所以推动这种法律是有史可据的。我们使用这种方法来构建法律演化树，同时也考虑到了法律温水煮青蛙式的步步推进。</p>
+<p><strong><em>PC Gamer：所以玩家为了实现游戏目标会做一些违背个人道德或信仰的小小妥协，而这种情况最终会导致作为领导人的玩家像滑坡一样做出越来越大的妥协。</em></strong></p>
+<p><strong>Kuba</strong>：是的，20世纪的历史和当下的世界向我们展示了这种集权国家的诞生方式。向不愉快的结果妥协一小步会引起连锁反应，这是我们想要向玩家展示的。</p>
+<p><img src="/images/FrostPunkInterview/5.jpg" alt=""></p>
+<p><strong><em>PC Gamer：的确如此。游戏本身并不会判断你的游戏行为，但系统依旧会指出你做出的一些选择并非完美。通关之后，我既为自己做出很多糟糕的事而内疚，也想为我“带领人们活了下来，拯救了生命”而辩护。这两种想法交织的感觉非常奇妙。</em></strong></p>
+<p><strong>Kuba</strong>：这个问题问得好！（笑）其实在游戏发售后我们得到了很多反馈。在游戏通关后玩家会看到整个城市的发展时间线以及一些对你的选择的评论，其中一个通关日志提出了“这个城市是否值得存在”这个问题，很多玩家的反应是这种问题太过愚蠢，因为大家的想法是“每个人都幸存了，还有比这更有意义的选择吗？”</p>
+<p>这算是网络上的月经贴了，不过游戏中的这个问题是指在某些情况下玩家的这些城市是否值得存续，而非牺牲人道或者更高层次的价值。我们不想回答这个问题，适才所述是制作组向玩家提出的问题，答案为何还望玩家自己思考。</p>
+<p><strong><em>PC Gamer：那接下来我们来聊聊美术方面。这种冷酷、凛冽的美术风格非常漂亮。我想谈谈19世纪的设定与蒸汽朋克对游戏的影响，还有你们选择这种独特美术风格的原因。</em></strong></p>
+<p><strong>Łukasz Juszczyk</strong>：你大概认为维多利亚时代是我们的重要参考。不过其实总的来说我们的大部分设计来源于工业建筑。当然，我们可以在维多利亚时代的某些建筑介绍中了解建筑物的某些特征，比如窗户的形状之类的，但是在世界各地都可以找到这种造型很酷的钢制桥梁。所以我们最大的灵感来自于全球工业时代的各类工业建筑。</p>
+<p><strong><em>PC Gamer：所以你们是为了更好地做出美术风格而选择这个引擎吗？还是其他什么别的原因。</em></strong></p>
+<p><strong>Łukasz</strong>：没错，我们选择自研引擎的原因是我们做了很多个性化功能以更好地完成游戏，比如烟雾和镜像功能。举个例子，你在圆形地图上部署建筑，这些建筑会进行弯曲以适配网格，这个功能只能在我们的引擎上实现。自研引擎就是针对特定需求的特定工具<br><img src="/images/FrostPunkInterview/6.jpg" alt=""></p>
+<p><strong><em>PC Gamer：那么你们从《这是我的战争》中吸取了哪些可供塑造《冰汽时代》的经验？</em></strong></p>
+<p><strong>Kuba</strong>：这两个游戏都是关于生存主题的，但是规模却大不相同。制作《冰汽时代》之前我们算是制作了一款非常成功的游戏，这个游戏有通常生存类型游戏中具备的严肃主题，所以我们会贯彻这种设计思想。不过三个人的避难所和一开始就有八十人最终有上百人规模的避难所有质的区别，这是两种完全不同的游戏。</p>
+<p>这种规模上的进化我们花了很多功夫去适应，所以我想说的是感谢《这是我的战争》专注体验的设计理念，延续这个理念，我们在开发游戏的时候会把功夫下在让玩家体验主题上，而不是一种机制或者别的什么具体玩法上。</p>
+<p>依据《这是我的战争》的思路，我们最终能在《冰汽时代》中将生存-城市建造模式与剧情驱动下的社会生存元素结合起来。游戏体验和游戏主题一直是指引我们设计的明灯，而不是什么做一个项目就能一夜暴富的低级趣味，这种理念也来源于《这是我的战争》。</p>
+<p><strong><em>PC Gamer：总的来说这两款游戏里有太多的苦难，幸福的人、幸福的事寥寥无几。玩《冰汽时代》其实让人充满压力。。。</em></strong></p>
+<p><strong>Kuba</strong>：抱歉抱歉！（笑）</p>
+<p><strong><em>PC Gamer：不过某种程度上这种悲惨和不安的经历也是真正具有吸引力的部分。你这样设计是为了增添玩家在悲惨情境中的沉浸感吗？</em></strong></p>
+<p><strong>Kuba</strong>：很多时候人们觉得游戏给予了玩家各种幻想，玩家会是一个强大的英雄，可以在游戏中无所不能。而我们反对这种理念，并在游戏中践行了这种反对。游戏会把你放在现实中不会体验到的情境中，就《冰汽时代》而言你应该庆幸这种情形并不真实存在。制作者的目的是为了让玩家体验从未想象过、参与过的互动。在这种艰难的绝境中，你独自克服困难达成了游戏目标，这才是最有成就感的游戏体验。</p>
+<p>不过除此之外，这种体验还有更深层次的含义。一个游戏除了让玩家自问“今天升了几级”或者“你的枪获得了什么加强”之外，也可以让玩家思考生命中真正富有价值的东西，思考自己在任何情况下都不会越过的底限是什么，让玩家在面临道德和生存的双重困境时扪心自问：“我会如何抉择？”</p>
+<p>游戏通常就是一系列被规划好的选择，那么什么样的选择才有趣？为了达成目标，你是倾向于牺牲一些道德观念，还是为达目的不择手段？这种两难的选择是我们设计游戏原则之一。</p>
+<p>而这些动态的问题是其他的媒体形式难以呈现的，但游戏却是恰到好处的载体。所以，游戏是真正有意义的娱乐形式，也是今后发展的方向。游戏值得你花费更多的时间，让你用不同的眼光看待这个世界。<br><img src="/images/FrostPunkInterview/7.jpg" alt=""></p>
+<p><strong><em>PC Gamer：我认为《冰汽时代》触及了一些当下现实世界的顾虑。游戏剧本中的两三个章节的确是有关难民涌入城市的挑战，还有以下关于气候变化的主题。你是否希望人们能透过这个游戏来关怀现实世界中的这些问题？</em></strong></p>
+<p><strong>Kuba</strong>：这毋庸置疑。艺术来源于生活，我们认为一个选择之所以有趣是因为它和你在现实生活中面临的选择有相通之处，这种选择是真实世界的缩影。游戏的世界不一定是有炫酷幻想的世界，也可以是投映现实的世界。我们想做一个考察玩家作为领袖如何对待人民、社会、和社区关系的游戏，透过在游戏中的抉择，玩家可以察觉到自己对现实世界的态度与观念。</p>
+<p>19世纪的往事对我们的游戏制作有很大的启示。19世纪社会阶层大量分化，工人阶层开始形成，出现了“捣毁机器”运动。这可以类比当前“人工智能对就业的影响”这种主题。我们喜欢探究这种耐人深思的主题，更喜欢让人们通过我们的游戏去思考这些主题，这对玩家和制作组而言都是一件非常酷的事情。</p>
+<p><strong><em>译者注</em></strong>：<em>捣毁机器运动，又名卢德运动（ Luddite Campaign），是由19世纪英国民间手工业者发起，通过捣毁机器的手段来反对纺织工业化造成的失业。</em></p>
+<blockquote>
+<p><em>翻译是我们观察世界的方式，也是我们的兴趣所在。<br>“取经号”是一个专注于外媒翻译的社区组织，微信号是 JTWest，是 Journey to the West 的英文缩写，也可以通过qujinghao.com访问我们。<br>欢迎在文章的评论区与我们交流，我们也将致力于为机核的玩家群体带来更多、更好的内容。</em></p>
+</blockquote>
+
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2018/04/28/interviewExp/" title= 腾讯2018IEG校招游戏策划暑期实习生面试经验 >
+                    <span>Previous Post</span>
+                    <span>腾讯2018IEG校招游戏策划暑期实习生面试经验</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMjgwNi85MzY3>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    <!--PC版-->
+
+
+    
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:KiroZhang1997@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://github.com/kiroZhang1997" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.zhihu.com/people/xiao-yao-vt/activities" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.facebook.com/profile.php?id=100010596064807" class="iconfont-archer facebook" target="_blank" title="facebook"></a>
+            
+        
+    
+        
+            
+                <a href="https://weibo.com/2644798223/profile?rightmod=1&wvr=6&mod=personinfo" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/%E8%8D%A9%E5%B0%A7-%E5%BC%A0-6b1449128/" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
+        </span>
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top">&#xe639;</div>
+    <div class="sidebar">
+    <div class="sidebar-header sidebar-header-show-archive">
+        <div class="sidebar-category">
+            <span class="sidebar-archive-link"><span class="iconfont-archer">&#xe67d;</span>Archive</span>
+            <span class="sidebar-tags-link"><span class="iconfont-archer">&#xe610;</span>Tag</span>
+        </div>
+    </div>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-archive">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 8 </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href= "/2018/06/04/ForstPunk_Interview/" >翻译-冰汽时代开发者访谈:希望、苦难与峻法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/28</span><a class="archive-post-title" href= "/2018/04/28/interviewExp/" >腾讯2018IEG校招游戏策划暑期实习生面试经验</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/21</span><a class="archive-post-title" href= "/2018/02/21/Rainbow6_Audio/" >翻译-《彩虹六号：围攻》中可破坏关卡中的动态音频设计</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/26</span><a class="archive-post-title" href= "/2018/01/26/GameDesignGuideTrans/" >翻译-多人游戏关卡设计视觉化指南</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/22</span><a class="archive-post-title" href= "/2017/12/22/unityApi/" >Note_UnityAPI</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/30</span><a class="archive-post-title" href= "/2017/11/30/JS_Scoping&Hoisting/" >JavaScript中的作用域和声明提升 Scoping & Hoisting in JavaScript</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/About_const_2/" >C++:关于常量const</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/CompositeDataType/" >C++:关于复合类型</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">C++</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Programming</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">GameDesign</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">job</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Unity</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
