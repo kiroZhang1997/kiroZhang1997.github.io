@@ -260,7 +260,7 @@
         </div>
         <footer class="footer footer-unloaded">
     <!-- social  -->
-    
+    <!-- 
     <div class="social">
         
     
@@ -284,18 +284,40 @@
     
 
     </div>
-    
+     -->
     <!-- powered by Hexo  -->
-    <div class="copyright">
+    <!-- <div class="copyright">
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">Theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">archer</a></span>
-    </div>
+    </div> -->
     <!-- 不蒜子  -->
-    
+    <!-- 
     <div class="busuanzi-container">
         <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
         </span>
     </div>
-    
+     -->
+    <!-- <span id="timeDate" style="text-align:center">载入天数...</span><span id="times" style="text-align:center">载入时分秒...</span> -->
+    <div id="timeDate" style="text-align:center" >
+        
+    </div> 
+    <div id="times" style="text-align:center">
+    </div>
+        <script>
+            var now = new Date(); 
+            function createtime() { 
+                var grt= new Date("11/27/2017 20:08:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+                now.setTime(now.getTime()+250); 
+                days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+                hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+                if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+                mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+                seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+                snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+                document.getElementById("timeDate").innerHTML = "距建站 "+dnum+" 天 "; 
+                document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+            } 
+        setInterval("createtime()",250);
+        </script>
 </footer>
     </div>
     <!-- toc -->
@@ -483,16 +505,6 @@
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/About_const_2/" >C++:关于常量const</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/CompositeDataType/" >C++:关于复合类型</a>
-        </li>
-    
-    
     
     
     
@@ -506,18 +518,37 @@
             <span class="archive-post-date">Invalid date</span><a class="archive-post-title" href= "/2021/01/04/2021newyear/" >写于21年初 断更两年半后</a>
         </li>
     
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/About_const_2/" >C++:关于常量const</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/27</span><a class="archive-post-title" href= "/2017/11/27/CompositeDataType/" >C++:关于复合类型</a>
+        </li>
+    
     </div>
   </div>
         <div class="sidebar-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name"><a href= "#">job</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">life</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">C++</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Programming</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">job</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">life</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">GameDesign</a></span>
     
