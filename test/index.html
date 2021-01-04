@@ -165,134 +165,66 @@
             }
         </script>
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/12/22/unityApi/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Note_UnityAPI</span>
-                    </h2>
-                <div class="abstract-content">
-                    执行顺序：(图片来源：https://docs.unity3d.com/Manual/ExecutionOrder.html)
-继承自MonoBehavior的message响应事件：碰撞检测：
+            <main class="main post-page">
+    <article class="article-entry">
+        <!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | H5Test</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script>
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/test.json", {onProgress: UnityProgress});
+    </script>
+  </head>
+  <body>
+    <div class="webgl-content">
+      <div id="unityContainer" style="width: 960px; height: 600px"></div>
+      <div class="footer">
+        <div class="webgl-logo"></div>
+        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="title">H5Test</div>
+      </div>
+    </div>
+  </body>
+</html>
 
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Unity>Unity</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/22</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/30/JS_Scoping&Hoisting/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>JavaScript中的作用域和声明提升 Scoping &amp; Hoisting in JavaScript</span>
-                    </h2>
-                <div class="abstract-content">
-                    本文参考: Nicholas C.Zakas《JavaScript高级程序设计》2012 Ben Cherry《JavaScript Scoping and Hoisting》2010 相关链接: https://www.nczonline.net/ http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
- 首先要理解的是JS的执行环境(execution context)。执行环境定义了变量或者函数有权访问的其他数据。 每一个执行环境都有一个预制关联的变量对象(variable object)，全局环境是最外...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/30</span>
-                </div>
-            </div>
-        </article>
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8zMjgwNi85MzY3>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
     
     
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/27/About_const_2/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>C++:关于常量const</span>
-                    </h2>
-                <div class="abstract-content">
-                    指向常量的指针（pointer to const）不能用于改变其指向对象的值，但可以指向一个非常量对象123456const int a = 66;int *ptr_a = &amp;a; //错误，因为类型不符const int *ptr_a = &amp;a; //正确int b = 77;const int *ptr_b = &amp;b; //正确，常量指针可以指向非常量对象
-常量指针（const pointer）和指向常量的指针是不同的概念。常量指针是指把指针定义为常量，常量指针必须初始化，而且一旦初始化就不能改变。12345int a = 233;int *const ptr...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = C++>C++</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/27</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/27/CompositeDataType/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>C++:关于复合类型</span>
-                    </h2>
-                <div class="abstract-content">
-                    复合类型有两种：引用和指针；引用（reference）为对象起了一个新名字（不是新建对象），通过将声明符写成&amp;d的形式来定义引用类型，d是声明的变量名。12int ra =100;int &amp;ref_ra = ra; //ref_ra引用到ra
-在变量初始化时，新建对象的赋值是相当于拷贝（copy），而引用的赋值是绑定（bind），绑定无法同被绑对象解除，因此引用必须初始化；以引用作为初始值，相当于以被引用对象的值作为初始值；因为引用不是对象，所以不能定义引用的引用（但可以定义指针的指针）。123int ref_ra = 200; //等价于 ra = 200int rb ...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = C++>C++</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/27</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
+    <!--PC版-->
+
+    <!--PC版-->
+
+
     
 </main>
             <!-- profile -->
