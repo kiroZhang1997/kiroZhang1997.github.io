@@ -71,8 +71,10 @@
     
 </head>
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
@@ -83,18 +85,29 @@
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/solar.png)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            Proletarier aller Länder vereinigt Euch
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                愿青年人一扫颓气，奋力向前
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -170,14 +183,14 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017/11/30/JS_Scoping&Hoisting/" >
+            <a class="content-show-full" href = "/2017/11/27/CompositeDataType/" >
                     <h2 class="abstract-title">
                         
-                        <span>JavaScript中的作用域和声明提升 Scoping &amp; Hoisting in JavaScript</span>
+                        <span>C++:关于复合类型</span>
                     </h2>
                 <div class="abstract-content">
-                    本文参考: Nicholas C.Zakas《JavaScript高级程序设计》2012 Ben Cherry《JavaScript Scoping and Hoisting》2010 相关链接: https://www.nczonline.net/ http://www.adequatelygood.com/JavaScript-Scoping-and-Hoisting.html
- 首先要理解的是JS的执行环境(execution context)。执行环境定义了变量或者函数有权访问的其他数据。 每一个执行环境都有一个预制关联的变量对象(variable object)，全局环境是最外...
+                    复合类型有两种：引用和指针；引用（reference）为对象起了一个新名字（不是新建对象），通过将声明符写成&amp;d的形式来定义引用类型，d是声明的变量名。12int ra =100;int &amp;ref_ra = ra; //ref_ra引用到ra
+在变量初始化时，新建对象的赋值是相当于拷贝（copy），而引用的赋值是绑定（bind），绑定无法同被绑对象解除，因此引用必须初始化；以引用作为初始值，相当于以被引用对象的值作为初始值；因为引用不是对象，所以不能定义引用的引用（但可以定义指针的指针）。123int ref_ra = 200; //等价于 ra = 200int rb ...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -185,23 +198,64 @@
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = C++>C++</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Programming>Programming</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/30</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/27</span>
                 </div>
             </div>
         </article>
     
     <!-- paginator  -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">#PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+    
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" src= /avatar/Link.jpg >
+    <div class="profile-name">张荩尧</div>
+    
+    <div class="profile-signature">
+        亲爱的达瓦里希
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:KiroZhang1997@gmail.com" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+            
+                <a href="https://www.instagram.com/_zhangjinyao/" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/%E8%8D%A9%E5%B0%A7-%E5%BC%A0-6b1449128/" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+            
+        
+    
+
+    </div>
+    
+    
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
